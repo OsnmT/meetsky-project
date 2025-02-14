@@ -30,4 +30,8 @@ public class Login_StepDefinition {
         Assert.assertTrue(actualTitle.contains("Dashboard"));
     }
 
+    @When("user login as Employe{int}")
+    public void userLoginAsEmploye(int num) {
+        System.out.println(num);
+    }
 }
