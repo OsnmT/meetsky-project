@@ -30,8 +30,16 @@ public class Login_StepDefinition {
         Assert.assertTrue(actualTitle.contains("Dashboard"));
     }
 
-    @When("user login as Employe{int}")
-    public void userLoginAsEmploye(int num) {
-        System.out.println(num);
+
+    @When("user login as {string}")
+    public void userLoginAs(String username) {
+
+        String password = ConfigurationReader.getProperty("password");
+
+        loginPage.login(username,password);
+        System.out.println("user login");
+
     }
+
+
 }
