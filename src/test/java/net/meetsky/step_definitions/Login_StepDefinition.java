@@ -14,7 +14,7 @@ public class Login_StepDefinition {
     LoginPage loginPage = new LoginPage();
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("meetsky"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
     @When("user login")
     public void user_login() {
@@ -42,4 +42,14 @@ public class Login_StepDefinition {
     }
 
 
+    @Given("the user is on the login page")
+    public void theUserIsOnTheLoginPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+
+    }
+
+    @Given("the user logged in with username as {string} and password as {string}")
+    public void theUserLoggedInWithUsernameAsAndPasswordAs(String username, String password) {
+        loginPage.login(username,password);
+    }
 }

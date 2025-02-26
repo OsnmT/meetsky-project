@@ -37,7 +37,7 @@ public class Driver {
             String browserType = ConfigurationReader.getProperty("browser");
 
             /*
-            Depending on the browserType returned from the configuration.properties
+            Depending on the browserTyp+e returned from the configuration.properties
             switch statement will determine the "case", and open the matching browser.
              */
             switch (browserType) {
